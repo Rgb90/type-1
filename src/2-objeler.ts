@@ -9,8 +9,8 @@ interface BoxOffice {
 
 interface Movie {
   title: string;
-  originalTitle: string;
-  director: string;
+  originalTitle?: string;  //bu soru işareti optional (isteğe bağlı). soru işaretini kaldırınca 
+  director: string;                 //cats filminde originalTitle olmadığı için kırmızı çiziyor
   releaseYear: number;
   boxOffice: BoxOffice;
 }
@@ -47,5 +47,8 @@ const cats: Movie = {
 // getProfit(cats) --> -21166652
 
 const getProfit = (movie: Movie) => {
-    
-}
+    return movie.boxOffice.grossWorldwide - movie.boxOffice.budget;
+};
+
+console.log(getProfit(dune));
+console.log(getProfit(cats));

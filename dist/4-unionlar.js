@@ -5,6 +5,7 @@
 // "highScore" isminde bir değişken oluşturalım. Bu değişken, bir sayı veya
 // boolean değer alabilsin.
 // Kodu buraya yazalım...
+const highScore = 2;
 // **********************************************
 // ******************* BÖLÜM 2 ******************
 // **********************************************
@@ -12,41 +13,18 @@
 // oluşabilsin. Ancak sayılar ve string'ler bu array'in içinde bir arada olamasın. 
 // Yani ya sayı array'i olabilsin, ya da string array'i olabilsin.
 // Kodu buraya yazalım...
-// **********************************************
-// ******************* BÖLÜM 3 ******************
-// **********************************************
-// "SkillLevel" isminde bir literal türü oluşturalım (enum değil, literal tür).
-// Bu tür, "Beginner", "Intermediate", "Advanced", ve "Expert" değerlerini alabilsin.
-// Kodu buraya yazalım...
-// **********************************************
-// ******************* BÖLÜM 4 ******************
-// **********************************************
-// "SkiSchoolStudent" isminde bir tür oluşturalım. Bu tür, aşağıdaki özelliklere sahip
-// olsun:
-// - name bir string olsun
-// - age bir numara olsun
-// - sport değeri "ski" veya "snowboard" olsun
-// - level ise yukarıda oluşturduğumuz SkillLevel türünden bir değer olsun
-// Kodu buraya yazalım...
-// **********************************************
-// ******************* BÖLÜM 5 ******************
-// **********************************************
-// RGB renklerini temsil eden bir tür oluşturalım. Bu tür, aşağıdaki özelliklere sahip
-// olsun:
-// - r bir numara olsun
-// - g bir numara olsun
-// - b bir numara olsun
-// Kodu buraya yazalım...
-// HSL renklerini temsil eden bir tür oluşturalım. Bu tür, aşağıdaki özelliklere sahip
-// olsun:
-// - h bir numara olsun
-// - s bir numara olsun
-// - l bir numara olsun
-// Kodu buraya yazalım...
+const stuff = ["y"];
+const skillLevel = "Advanced"; // union birden fazla tür. bu sayede bu değişkende hepsini bana öneriyor
+const rgb = {
+    r: 4,
+    g: 3,
+    b: 9
+};
 // "colors" isminde boş bir array oluşturalım. Bu array, yukarıda oluşturduğumuz iki 
 // türden oluşabilsin. Yani bu array'in içinde hem RGB renkler, hem de HSL renkler 
 // bulunabilsin.
 // Kodu buraya yazalım...
+const colors = [{ r: 4, g: 3, b: 9 }, { h: 2, s: 4, l: 5 }];
 // **********************************************
 // ******************* BÖLÜM 6 ******************
 // **********************************************
@@ -59,3 +37,15 @@
 // array girilirse, fonksiyon bu array'in her bir string elemanı için ayrı ayrı
 // "Merhaba, İSİM" şeklinde bir string yazdırsın.
 // Kodu buraya yazalım...
+const greet = (name) => {
+    if (typeof name === "string") {
+        console.log("Merhaba " + name);
+    }
+    else {
+        for (const n of name) {
+            console.log("Merhaba " + n);
+        }
+    }
+};
+greet(["Zeynep Sare", "Asım", "Akif Selim", "Meryem", "Afife", "Ayşe"]);
+greet("Teyze");
